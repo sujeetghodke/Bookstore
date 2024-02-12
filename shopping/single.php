@@ -129,8 +129,14 @@ if (isset($_GET['id'])) {
                 success: function() {
                     alert("Added to cart successfully :)");
                     $("#submit").html("<i class='fas fa-shopping-cart'></i> Added to cart").prop("disabled", true);
+                    ref();
                 }
-            })
+            });
+
+            function ref() {
+                $("body").load("single.php?id=<?php echo $id; ?>");
+            }
+
         })
     });
 </script>
